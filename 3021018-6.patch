@@ -1,5 +1,5 @@
 diff --git a/core/modules/locale/locale.batch.inc b/core/modules/locale/locale.batch.inc
-index 4829363b6b..a0c846ff61 100644
+index 4829363b6b..45c0765df1 100644
 --- a/core/modules/locale/locale.batch.inc
 +++ b/core/modules/locale/locale.batch.inc
 @@ -45,6 +45,12 @@ function locale_translation_batch_status_check($project, $langcode, array $optio
@@ -8,7 +8,7 @@ index 4829363b6b..a0c846ff61 100644
    $source = locale_translation_get_status([$project], [$langcode]);
 +  // Do not proceed if the project is not in the source.
 +  if (!isset($source[$project][$langcode])) {
-+    $context['results']['files'][] = $source->name;
++    $context['results']['files'][] = 'File not available';
 +    $context['message'] = t('No translation for %project.', ['%project' => $project]);
 +    return;
 +  }
